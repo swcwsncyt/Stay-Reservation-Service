@@ -1,13 +1,12 @@
-# Project Name
+# Stay-Reservation
 
-> Project description
+> Remake the Airbnb WebApp - Reservation Part
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/stay-app
+  - https://github.com/stay-app
+  - https://github.com/stay-app
 
 ## Table of Contents
 
