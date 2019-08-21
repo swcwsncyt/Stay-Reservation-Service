@@ -4,8 +4,8 @@
 
 ## Related Projects
 
-  - https://github.com/stay-app
-  - https://github.com/stay-app
+  - https://github.com/stay-app/Stay-PhotoGallery-Service
+  - https://github.com/stay-app/Stay-Overview
   - https://github.com/stay-app
 
 ## Table of Contents
