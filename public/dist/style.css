@@ -1,0 +1,60 @@
+#res {
+  width: 376px;
+  height: 546px;
+  border: 1px rgb(228, 228, 228) solid;
+  right: 13%;
+  position: fixed;
+}
+#inner-res{
+  width: 326px;
+  height: 466px;
+  margin: auto;
+}
+#lorem-ipsum {
+  width: 700px;
+}
+#res-form{
+  width: 326px;
+  height: 385px;
+}
+#price-details {
+  width: 326px;
+  height: 28px;
+  margin-top: 16px;
+}
+#review-details {
+  width: 326px;
+  height: 20px;
+}
+#line {
+  width: 326px;
+  height: 1px;
+  background-color: rgb(235, 235, 235);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+#date-select-box {
+  width: 326px;
+  height: 64px;
+  margin-bottom: 8px;
+}
+#guest-box {
+  width: 326px;
+  height: 62px;
+  margin-bottom: 16px;
+}
+#total-box {
+  width: 326px;
+  height: 137px;
+  margin-bottom: 8px;
+}
+#reserve-btn {
+  width: 326px;
+  height: 46px;
+  margin-top: 32px;
+}
+#charge-statement {
+  width: 326px;
+  height: 20px;
+  margin-top: 8px;
+}
