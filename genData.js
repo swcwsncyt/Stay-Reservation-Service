@@ -29,9 +29,17 @@ var seed = () => {
     return Number(numStr);
   }
 
+  var genStar = () => {
+    var num = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
+    return num[Math.floor(Math.random() * 9)];
+  }
+
   var genReview = () => {
-    var num = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
-    return num[Math.floor(Math.random() * 10)];
+    var review = Math.floor(Math.random() * 10000);
+    if (review < 1) {
+      review += 1;
+    }
+    return review;
   }
 
   var genDate = () => {
@@ -66,9 +74,10 @@ var seed = () => {
     var cleanFee = genFee();
     var serviceFee = genFee();
     var review = genReview();
+    var star = genStar();
     var effectiveDate = "2019-10-01"
     var validDay = genValidDay();
-    listingStr += `INSERT INTO listing (maxGuest, price, cleanFee, serviceFee, review, effectiveDate, validDay) VALUES (${guest}, ${price}, ${cleanFee}, ${serviceFee}, ${review}, "${effectiveDate}", "${validDay}"); \n`
+    listingStr += `INSERT INTO listing (maxGuest, price, cleanFee, serviceFee, reviews, star, effectiveDate, validDay) VALUES (${guest}, ${price}, ${cleanFee}, ${serviceFee}, ${review}, ${star}, "${effectiveDate}", "${validDay}"); \n`
     var date = genDate();
     for(var r = 0; r < 5; r++) {
       bookingStr += `INSERT INTO booking (listing_id, date) VALUES (${i + 1}, "${date[r]}"); \n`
