@@ -2,7 +2,7 @@ import React from 'react';
 
 var Total = (props) => {
   return (
-    <div id="total-box">Total goes here</div>
+    <div id="res-total-box">Total goes here</div>
   )
 }
 

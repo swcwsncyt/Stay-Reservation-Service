@@ -10,7 +10,7 @@ class Guest extends React.Component {
   }
   render() {
     return (
-      <div id="guest-box">Guest Box here</div>
+      <div id="res-guest-box">Guest Box here</div>
     )
   }
 }

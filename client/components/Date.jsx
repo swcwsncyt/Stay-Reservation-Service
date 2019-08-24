@@ -10,7 +10,7 @@ class Date extends React.Component {
   }
   render() {
     return (
-      <div id="date-select-box">date box here!</div>
+      <div id="res-date-select-box">date box here!</div>
     )
   }
 }

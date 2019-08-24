@@ -2,7 +2,7 @@ import React from 'react';
 
 var Reserve = (props) => {
   return (
-    <button id="reserve-btn">Reserve</button>
+    <button id="res-reserve-btn">Reserve</button>
   )
 }
 export default Reserve;
