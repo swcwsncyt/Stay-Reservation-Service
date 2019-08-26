@@ -1,0 +1,69 @@
+/* #res-module{
+  width: 376px;
+  height: 546px;
+  border: 1px rgb(228, 228, 228) solid;
+  float: right;
+  margin-right: 12%;
+  margin-top: 1176px;
+} */
+#res-inner{
+  width: 326px;
+  height: 466px;
+  margin: auto;
+}
+#res-lorem-ipsum {
+  width: 700px;
+  margin-left: 150px;
+  margin-top: 52px;
+}
+#res-form{
+  width: 326px;
+  height: 385px;
+}
+#res-price-details {
+  width: 326px;
+  height: 28px;
+  margin-top: 16px;
+}
+#res-review-details {
+  width: 326px;
+  height: 20px;
+}
+#res-line {
+  width: 326px;
+  height: 1px;
+  background-color: rgb(235, 235, 235);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+#res-date-select-box {
+  width: 326px;
+  height: 64px;
+  margin-bottom: 8px;
+}
+#res-guest-box {
+  width: 326px;
+  height: 62px;
+  margin-bottom: 16px;
+}
+#res-total-box {
+  width: 326px;
+  height: 137px;
+  margin-bottom: 8px;
+}
+#res-reserve-btn {
+  width: 326px;
+  height: 46px;
+  margin-top: 32px;
+}
+#res-charge-statement {
+  width: 326px;
+  height: 20px;
+  margin-top: 8px;
+}
+#res-top-img {
+  width: 100%;
+}
+#res-bottom-img {
+  width: 100%;
+}
