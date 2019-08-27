@@ -13,9 +13,6 @@ class App extends React.Component {
 
     this.state = {
       resStyle: {
-        width: "376px",
-        height: "546px",
-        border: "1px rgb(228, 228, 228) solid",
         float: "right",
         marginRight: "150px",
         marginTop: "52px"
@@ -26,12 +23,9 @@ class App extends React.Component {
     window.addEventListener('scroll', this.onScroll.bind(this));
   }
   onScroll(e) {
-    if (e.target.scrollingElement.scrollTop > 527 && e.target.scrollingElement.scrollTop < 1660) {
+    if (e.target.scrollingElement.scrollTop > 527 && e.target.scrollingElement.scrollTop < 1688) {
       this.setState({
         resStyle: {
-          width: "376px",
-          height: "546px",
-          border: "1px rgb(228, 228, 228) solid",
           right: "158px",
           position: "fixed",
           top: "0px",
@@ -42,37 +36,32 @@ class App extends React.Component {
     if (e.target.scrollingElement.scrollTop < 527) {
       this.setState({
         resStyle: {
-          width: "376px",
-          height: "546px",
-          border: "1px rgb(228, 228, 228) solid",
           float: "right",
           marginRight: "150px",
           marginTop: "52px"
         }
       })
     }
-    if (e.target.scrollingElement.scrollTop > 1660) {
+    if (e.target.scrollingElement.scrollTop > 1688) {
       this.setState({
         resStyle: {
-          width: "376px",
-          height: "546px",
-          border: "1px rgb(228, 228, 228) solid",
           float: "right",
           marginRight: "150px",
-          marginTop: "1176px"
+          marginTop: "1220px"
         }
       })
     }
-    console.log(e); //340
   }
-
+  onSubmit(e) {
+    e.preventDefault();
+  }
   render() {
     return (
       <div style={this.state.resStyle} id="res-module">
         <div id="res-inner">
           <RoomDetails />
           <div id="res-line"></div>
-          <form id="res-form">
+          <form onSubmit={this.onSubmit.bind(this)} id="res-form">
             <Date />
             <Guest />
             <Total />

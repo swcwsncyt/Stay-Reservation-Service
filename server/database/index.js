@@ -1,18 +1,18 @@
-var mysql = require('mysql');
+const mysql = require('mysql');
 
-var db = mysql.createConnection({
+const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  database: 'reservation'
+  database: 'reservation',
 });
 
-var get = (id, callback) => {
+const getListingById = (id, callback) => {
   db.connect();
-  db.query('SELECT * FROM listing WHERE id = ?', id, (err, result)=>{
+  db.query('SELECT * FROM listing WHERE id = ?', id, (err, result) => {
     if (err) console.log(err);
     callback(err, result);
-  })
+  });
   db.end();
-}
+};
 
-module.exports = {get}
+module.exports = { getListingById };
