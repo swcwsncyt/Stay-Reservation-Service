@@ -6,7 +6,7 @@ var db = mysql.createConnection({
   database: 'reservation'
 });
 
-var get = (id, callback) => {
+var getListingById = (id, callback) => {
   db.connect();
   db.query('SELECT * FROM listing WHERE id = ?', id, (err, result)=>{
     if (err) console.log(err);
@@ -15,4 +15,4 @@ var get = (id, callback) => {
   db.end();
 }
 
-module.exports = {get}
+module.exports = {getListingById};

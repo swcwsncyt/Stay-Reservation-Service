@@ -11,10 +11,14 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, '../public/dist')))
 
 app.post('/api/reservation/search', (req, res)=>{
-  db.get(req.query.id, (err, result)=>{
+  db.getListingById(req.query.id, (err, result)=>{
     if (err) console.log(err);
     res.send(result);
   })
+})
+
+app.get('/api/reservation', (req, res) => {
+  res.send(req.query);
 })
 
 app.listen(port, ()=>{
