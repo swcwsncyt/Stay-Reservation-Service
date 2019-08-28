@@ -100,7 +100,7 @@ INSERT INTO listing (maxGuest, price, cleanFee, serviceFee, reviews, star) VALUE
 INSERT INTO listing (maxGuest, price, cleanFee, serviceFee, reviews, star) VALUES (3, 228.73, 6.75, 12.65, 6220, 4.5); 
 INSERT INTO listing (maxGuest, price, cleanFee, serviceFee, reviews, star) VALUES (1, 367.81, 14.86, 6.4, 2168, 3); 
 INSERT INTO booking (listing_id, date) VALUES (1, "2019-12-24"); 
-INSERT INTO booking (listing_id, date) VALUES (1, "2019-10-12"); 
+INSERT INTO booking (listing_id, date) VALUES (1, "2019-08-12"); 
 INSERT INTO booking (listing_id, date) VALUES (1, "2019-12-20"); 
 INSERT INTO booking (listing_id, date) VALUES (1, "2019-12-18"); 
 INSERT INTO booking (listing_id, date) VALUES (1, "2019-10-04"); 

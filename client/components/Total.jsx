@@ -4,23 +4,23 @@ var Total = (props) => {
   return (
     <div id="res-total-box">
       <div>
-        <span>$36 x 6 nights</span>
-        <span style={{float: "right"}}>$215</span>
+        <span>${props.details?props.details.price:null} x 1 night</span>
+        <span style={{float: "right"}}>${props.details?props.details.price*1:null}</span>
       </div>
       <div id="res-thin-line"></div>
       <div>
         <span>Cleaning fee</span>
-        <span style={{float: "right"}}>$24</span>
+        <span style={{float: "right"}}>${props.details?props.details.cleanFee:null}</span>
       </div>
       <div id="res-thin-line"></div>
       <div>
         <span>Service fee</span>
-        <span style={{float: "right"}}>$31</span>
+        <span style={{float: "right"}}>${props.details?props.details.serviceFee:null}</span>
       </div>
       <div id="res-thin-line"></div>
       <div>
         <span>Total</span>
-        <span style={{float: "right"}}>$270</span>
+        <span style={{float: "right"}}>${props.details?props.details.price*1 + props.details.cleanFee + props.details.serviceFee:null}</span>
       </div>
     </div>
   )

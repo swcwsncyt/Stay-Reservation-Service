@@ -13,9 +13,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public/dist')));
 
 app.post('/api/reservation/search', (req, res) => {
-  db.getListingById(req.query.id, (err, result) => {
+  db.getListingById(req.body.id, (err, result) => {
     if (err) console.log(err);
-    res.send(result);
+    db.getBookingById(req.body.id, (errB, resultB) => {
+      if (errB) console.log(errB);
+      res.send({ listing: result, booking: resultB });
+    });
   });
 });
 

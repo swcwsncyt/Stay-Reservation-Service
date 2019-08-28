@@ -18,7 +18,6 @@ class Guest extends React.Component {
   //TODO: setup + - button control, disable - if guest is 0, disable + if max guest.
   //overlay click control
   onClick(e) {
-    console.log("guest box clicked")
     if (!this.state.overlay) {
       this.setState({
         overlay: !this.state.overlay,
