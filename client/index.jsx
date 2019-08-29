@@ -6,6 +6,40 @@ import Date from './components/Date.jsx';
 import Guest from './components/Guest.jsx';
 import Total from './components/Total.jsx';
 import Reserve from './components/ReserveBtn.jsx';
+import styled from 'styled-components';
+
+const ResModule = styled.div`
+  color: rgb(72, 72, 72);
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  width: 376px;
+  padding-bottom: 16px;
+  border: 1px rgb(228, 228, 228) solid;
+  border-radius: 4px;
+`
+const ResInner = styled.div`
+  width: 326px;
+  height: 466px;
+  margin: auto;
+`
+const ResLine = styled.div`
+  width: 326px;
+  height: 1px;
+  background-color: rgb(235, 235, 235);
+  margin-top: 16px;
+  margin-bottom: 16px;
+`
+const ResForm = styled.form`
+  width: 326px;
+  height: 385px;
+`
+const ResChargeStatement = styled.div`
+  width: 326px;
+  height: 20px;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+`
 
 class App extends React.Component {
   constructor(props) {
@@ -33,6 +67,9 @@ class App extends React.Component {
         listing: res.data.listing[0],
         booking: res.data.booking
       })
+    })
+    .catch((err) => {
+      console.log("err")
     })
   }
   onScroll(e) {
@@ -70,23 +107,23 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div style={this.state.resStyle} id="res-module">
-        <div id="res-inner">
+    <ResModule style={this.state.resStyle}>
+        <ResInner >
           <RoomDetails details={this.state.listing}/>
-          <div id="res-line"></div>
-          <form onSubmit={this.onSubmit.bind(this)} id="res-form">
+          <ResLine />
+          <ResForm onSubmit={this.onSubmit.bind(this)}>
             <Date booking={this.state.booking}/>
             <Guest details={this.state.listing}/>
             <Total details={this.state.listing}/>
             <Reserve />
-            <div id="res-charge-statement">You won’t be charged yet</div>
-          </form>
-        </div>
-      </div>
+            <ResChargeStatement>You won’t be charged yet</ResChargeStatement>
+          </ResForm>
+        </ResInner>
+    </ResModule>
     )
   }
 }
 
 ReactDOM.render(<App />, document.getElementById("res"))
-
+//style={this.state.resStyle}
 export default App;

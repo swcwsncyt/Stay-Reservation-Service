@@ -1,61 +1,67 @@
-#res{
-  color: rgb(72, 72, 72);
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-}
-#res-inner{
-  width: 326px;
-  height: 466px;
-  margin: auto;
-}
 #res-lorem-ipsum {
   width: 700px;
   margin-left: 150px;
   margin-top: 52px;
 }
-#res-module {
+#res-top-img {
+  width: 100%;
+}
+#res-bottom-img {
+  width: 100%;
+}
+/* #res{
+  color: rgb(72, 72, 72);
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+} */
+/* #res-inner{
+  width: 326px;
+  height: 466px;
+  margin: auto;
+} */
+/* #res-module {
   width: 376px;
   padding-bottom: 16px;
   border: 1px rgb(228, 228, 228) solid;
   border-radius: 4px;
-}
-#res-form {
+} */
+/* #res-form {
   width: 326px;
   height: 385px;
-}
-#res-price-details {
+} */
+/* #res-price-details {
   width: 326px;
   height: 28px;
   margin-top: 16px;
-}
-#res-review-details {
+} */
+/* #res-review-details {
   width: 326px;
   height: 20px;
-}
-#res-line {
+} */
+/* #res-line {
   width: 326px;
   height: 1px;
   background-color: rgb(235, 235, 235);
   margin-top: 16px;
   margin-bottom: 16px;
-}
-#res-date-select-box {
+} */
+/* #res-date-select-box {
   width: 326px;
   height: 64px;
   margin-bottom: 8px;
-}
-#res-guest-box {
+} */
+/* #res-guest-box {
   width: 326px;
   height: 62px;
   margin-bottom: 24px;
-}
-#res-total-box {
+} */
+/* #res-total-box {
   width: 326px;
   height: 137px;
   margin-bottom: 8px;
   font-size: 14px;
   font-weight: 400;
-}
-#res-reserve-btn {
+} */
+/* #res-reserve-btn {
   width: 326px;
   height: 46px;
   margin-top: 12px;
@@ -65,41 +71,35 @@
   font-size: 16px;
   font-weight: 600;
   color: white;
-}
-#res-charge-statement {
+} */
+/* #res-charge-statement {
   width: 326px;
   height: 20px;
   margin-top: 8px;
   text-align: center;
   font-size: 12px;
   font-weight: 600;
-}
-#res-top-img {
-  width: 100%;
-}
-#res-bottom-img {
-  width: 100%;
-}
-#res-thin-line {
+} */
+/* #res-thin-line {
   width: 326px;
   height: 1px;
   background-color: rgb(235, 235, 235);
   margin-top: 10px;
   margin-bottom: 10px;
-}
-#res-guest-select {
+} */
+/* #res-guest-select {
   width: 326px;
   height: 40px;
   border: 1px solid rgb(235, 235, 235);
   border-radius: 4px;
-}
-#res-guest-innertext {
+} */
+/* #res-guest-innertext {
   margin-left: 10px;
   line-height: 41px;
   padding: 0.3em 0.5em;
   border-radius: 3px;
-}
-#res-guest-overlay {
+} */
+/* #res-guest-overlay {
   position: absolute;
   width: 326px;
   height: 300px;
@@ -107,95 +107,96 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px;
   border-radius: 3px;
   border: 1px rgb(235, 235, 235) solid;
-}
-#res-guest-overlay-inner{
+} */
+/* #res-guest-overlay-inner{
   width: 294px;
   height: 268px;
   margin: 16px;
-}
-#res-guest-overlay-adults{
+} */
+/* #res-guest-overlay-adults{
   width: 294px;
   height: 34px;
   margin-top: 16px;
   margin-bottom: 24px;
   font-size: 16px;
   font-weight: 600;
-}
-#res-guest-overlay-children{
+} */
+/* #res-guest-overlay-children{
   width: 294px;
   height: 44px;
-}
-#res-guest-overlay-infants{
+} */
+/* #res-guest-overlay-infants{
   width: 294px;
   height: 44px;
   margin-top: 24px;
   margin-bottom: 24px;
-}
-#res-guest-overlay-info{
+} */
+/* #res-guest-overlay-info{
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 16px;
-}
-#res-guest-overlay-close, #res-date-overlay-clear{
+} */
+/* #res-guest-overlay-close,  */
+/* #res-date-overlay-clear{
   color: #008489;
   font-size: 14px;
   font-weight: 600;
   text-align: right;
   cursor: pointer;
-  /* text-decoration: underline; */
-}
-.res-guest-overlay-button {
+  text-decoration: underline;
+} */
+/* .res-guest-overlay-button {
   border: 1px rgb(0, 132, 137) solid;
   border-radius: 50%;
   height: 34px;
   width: 34px;
-}
-.res-guest-overlay-button-group {
+} */
+/* .res-guest-overlay-button-group {
   float: right;
   width: 120px;
   height: 34px;
-}
-.res-guest-overlay-quantity {
+} */
+/* .res-guest-overlay-quantity {
   margin-left: 20px;
   margin-right: 20px;
-}
-.res-guest-overlay-button-group-44 {
+} */
+/* .res-guest-overlay-button-group-44 {
   float: right;
   width: 120px;
   height: 34px;
   padding-top: 5px;
-}
-.res-guest-arrow {
+} */
+/* .res-guest-arrow {
   width: 16px;
   padding-top: 16px;
   padding-right: 16px;
   float: right;
-}
-.res-date-input {
+} */
+/* .res-date-input {
   float: left;
   width: 146px;
   height: 40px;
   line-height: 40px;
   text-indent: 15px;
-}
-#res-date-group {
+} */
+/* #res-date-group {
   width: 326px;
   height: 40px;
   border: 1px solid rgb(235, 235, 235);
   border-radius: 4px;
-}
-#res-date-overlay-container {
+} */
+/* #res-date-overlay-container {
   position: absolute;
   width: 332px;
   border: 1px solid rgb(235, 235, 235);
   border-radius: 4px;
   background-color: white;
   text-align: center;
-}
-#res-date-overlay-pointer {
+} */
+/* #res-date-overlay-pointer {
   height: 15px;
-}
-.res-date-overlay-button {
+} */
+/* .res-date-overlay-button {
   width: 36px;
   height: 30px;
   margin-top: 15px;
@@ -204,38 +205,38 @@
   color: rgb(130, 136, 138);
   font-size: 18px;
   border-radius: 3px;
-}
-#res-date-overlay-calendar {
+} */
+/* #res-date-overlay-calendar {
   table-layout: fixed;
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
-}
-.res-date-overlay-thtd {
+} */
+/* .res-date-overlay-thtd {
   width: 40px;
   height: 20px;
-}
-#res-calendar {
+} */
+/* #res-calendar {
   display: table;
   width: 292px;
   margin-left: auto;
   margin-right: auto;
   border-collapse: collapse;
-}
-.res-calendar-day {
+} */
+/* .res-calendar-day {
   display: table-cell;
   border: 1px solid rgb(235, 235, 235);
   color: black;
   font-size: 12px;
-}
-.res-calendar-week {
+} */
+/* .res-calendar-week {
   display: table-row;
   height: 41px;
-}
-.res-calendar-day-crossed {
+} */
+/* .res-calendar-day-crossed {
   display: table-cell;
   border: 1px solid rgb(235, 235, 235);
   color: rgb(235, 235, 235);
   font-size: 12px;
   text-decoration: line-through;
-}
+} */

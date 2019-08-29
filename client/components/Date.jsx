@@ -3,7 +3,64 @@ import arrow from '../img/arrow.png';
 import Calendar from './Calendar.jsx';
 import pointer from '../img/pointer.png';
 import moment from 'moment';
+import styled from 'styled-components';
 
+const ResDateSelectBox = styled.div`
+  width: 326px;
+  height: 64px;
+  margin-bottom: 8px;
+`
+const ResDateInput = styled.div`
+  float: left;
+  width: 146px;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 15px;
+`
+const ResDateGroup = styled.div`
+width: 326px;
+height: 40px;
+border: 1px solid rgb(235, 235, 235);
+border-radius: 4px;
+`
+const ResDateOverlayContainer = styled.div`
+  position: absolute;
+  width: 332px;
+  border: 1px solid rgb(235, 235, 235);
+  border-radius: 4px;
+  background-color: white;
+  text-align: center;
+`
+const ResDateOverlayPointer = styled.img`
+  height: 15px;
+`
+const ResDateOverlayBtn = styled.div`
+  width: 36px;
+  height: 30px;
+  margin-top: 15px;
+  background-color: white;
+  border-color: rgb(235, 235, 235);
+  color: rgb(130, 136, 138);
+  font-size: 18px;
+  border-radius: 3px;
+`
+const ResDateOverlayCalendar = styled.table`
+  table-layout: fixed;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+`
+const ResDateOverlayCalendarHeading = styled.td`
+  width: 40px;
+  height: 20px;
+`
+const ResDateOverlayClear = styled.div`
+  color: #008489;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+  cursor: pointer;
+`
 class Date extends React.Component {
   constructor(props) {
     super(props);
@@ -84,47 +141,47 @@ class Date extends React.Component {
   }
   render() {
     return (
-      <div id="res-date-select-box">
+      <ResDateSelectBox>
         <div style={{color: "rgb(72, 72, 72)", fontSize: "12px", fontWeight: 600, marginBottom: "2px"}}>Date</div>
-        <div id="res-date-group">
-          <div className="res-date-input" onClick={this.onClickStart.bind(this)}>
+        <ResDateGroup>
+          <ResDateInput onClick={this.onClickStart.bind(this)}>
             <span style={this.state.startOverlay?{backgroundColor: `#99ede6`, borderRadius: "3px"}: null}>{this.state.start}</span>
-          </div>
+          </ResDateInput>
           <div onClick={this.hideAll.bind(this)} style={{float: "left"}}>
             <img style={{height: "38px"}} src={arrow}/>
           </div>
-          <div className="res-date-input" onClick={this.onClickEnd.bind(this)}>
+          <ResDateInput onClick={this.onClickEnd.bind(this)}>
             <span style={this.state.endOverlay?{backgroundColor: `#99ede6`, borderRadius: "3px"}: null}>{this.state.end}</span>
-          </div>
-        </div>
+          </ResDateInput>
+        </ResDateGroup>
         {this.state.overlay? 
         <div style={{height: "343px"}}>
           <div style={{height: "8px"}}>
-            <img src={pointer} style={this.state.pointerStyle}id={"res-date-overlay-pointer"}/>
+            <ResDateOverlayPointer src={pointer} style={this.state.pointerStyle}/>
           </div>
-          <div id="res-date-overlay-container">
-            <button onClick={this.onClickPrev.bind(this)} className={"res-date-overlay-button"} style={{float: "left", marginLeft: "15px"}}>←</button>
-            <button onClick={this.onClickNext.bind(this)} className={"res-date-overlay-button"} style={{float: "right", marginRight: "15px"}}>→</button>
+          <ResDateOverlayContainer>
+            <ResDateOverlayBtn onClick={this.onClickPrev.bind(this)} style={{float: "left", marginLeft: "15px"}}>←</ResDateOverlayBtn>
+            <ResDateOverlayBtn onClick={this.onClickNext.bind(this)} style={{float: "right", marginRight: "15px"}}>→</ResDateOverlayBtn>
             <div style={{marginTop: "20px", fontWeight: "bold"}}>{`${moment(`${this.state.currentMonth}`, 'MM').format('MMMM')} ${this.state.currentYear}`}</div>
-            <table id="res-date-overlay-calendar">
+            <ResDateOverlayCalendar>
               <thead>
                 <tr style={{fontSize: "12px", textAlign: "center", color: "rgb(117, 117, 117)"}}>
-                  <td className={"res-date-overlay-thtd"}>Su</td>
-                  <td className={"res-date-overlay-thtd"}>Mo</td>
-                  <td className={"res-date-overlay-thtd"}>Tu</td>
-                  <td className={"res-date-overlay-thtd"}>We</td>
-                  <td className={"res-date-overlay-thtd"}>Th</td>
-                  <td className={"res-date-overlay-thtd"}>Fr</td>
-                  <td className={"res-date-overlay-thtd"}>Sa</td>
+                  <ResDateOverlayCalendarHeading>Su</ResDateOverlayCalendarHeading>
+                  <ResDateOverlayCalendarHeading>Mo</ResDateOverlayCalendarHeading>
+                  <ResDateOverlayCalendarHeading>Tu</ResDateOverlayCalendarHeading>
+                  <ResDateOverlayCalendarHeading>We</ResDateOverlayCalendarHeading>
+                  <ResDateOverlayCalendarHeading>Th</ResDateOverlayCalendarHeading>
+                  <ResDateOverlayCalendarHeading>Fr</ResDateOverlayCalendarHeading>
+                  <ResDateOverlayCalendarHeading>Sa</ResDateOverlayCalendarHeading>
                 </tr>
               </thead>
-            </table>
+            </ResDateOverlayCalendar>
             <Calendar getClickedDate={this.getClickedDate.bind(this)} currentCal={this.state.calendar} booking={this.props.booking}/>
-            <div style={{marginRight: "16px", marginTop: "16px", marginBottom: "16px"}}id="res-date-overlay-clear">Clear Dates</div>
-          </div>
+            <ResDateOverlayClear style={{marginRight: "16px", marginTop: "16px", marginBottom: "16px"}}>Clear Dates</ResDateOverlayClear>
+          </ResDateOverlayContainer>
         </div>
         : null}
-      </div>
+      </ResDateSelectBox>
     )
   }
 }

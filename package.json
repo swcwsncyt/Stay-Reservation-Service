@@ -12,20 +12,25 @@
     "build": "webpack --config webpack.config.js --watch",
     "emptydb": "mysql -u root < server/database/schema.sql",
     "seed": "mysql -u root < server/database/seed.sql",
-    "test": "jest"
+    "test": "jest --config jest.config.js"
   },
   "dependencies": {
     "axios": "0.19.0",
     "express": "4.17.1",
+    "mysql": "2.17.1",
     "react": "16.9.0",
     "react-dom": "16.9.0",
-    "mysql": "2.17.1"
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "7.5.5",
     "@babel/preset-react": "7.0.0",
+    "babel-jest": "^24.9.0",
     "babel-loader": "8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.2.2",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
@@ -37,6 +42,7 @@
     "jest": "^24.9.0",
     "moment": "2.24.0",
     "nodemon": "1.19.1",
+    "react-test-renderer": "^16.9.0",
     "sequelize": "5.13.1",
     "webpack": "4.39.1",
     "webpack-cli": "^3.3.7"

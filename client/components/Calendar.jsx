@@ -1,5 +1,32 @@
 import React from 'react';
 import moment from 'moment';
+import styled from 'styled-components';
+
+const ResCalendar = styled.table`
+  display: table;
+  width: 292px;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+`
+const ResCalendarWeek = styled.tr`
+display: table-row;
+height: 41px;
+`
+const ResCalendarDay = styled.td`
+  display: table-cell;
+  border: 1px solid rgb(235, 235, 235);
+  color: black;
+  font-size: 12px;
+`
+const ResCalendarDayCrossed = styled.td`
+  display: table-cell;
+  border: 1px solid rgb(235, 235, 235);
+  color: rgb(235, 235, 235);
+  font-size: 12px;
+  text-decoration: line-through;
+`
+
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -76,22 +103,22 @@ class Calendar extends React.Component {
   }
   render() {
     return (
-      <table id="res-calendar">
+      <ResCalendar>
         <tbody>
           {this.state.calendarBoard.map((row) => {
-            return <tr className={"res-calendar-week"}>
+            return <ResCalendarWeek>
               {row.map((td) => {
                 if (td === 0) {
-                  return <td className={"res-calendar-day-hide"}></td>
+                  return <td></td>
                 } else {
                   if (Number(this.props.currentCal.year) < Number(this.state.today.slice(0, 4))) {
-                    return <td className={"res-calendar-day-crossed"}>{td}</td>
+                    return <ResCalendarDayCrossed>{td}</ResCalendarDayCrossed>
                   } else if (Number(this.props.currentCal.year) === Number(this.state.today.slice(0, 4))) {
                     if (Number(this.props.currentCal.month) < Number(this.state.today.slice(4, 6))) {
-                      return <td className={"res-calendar-day-crossed"}>{td}</td>
+                      return <ResCalendarDayCrossed>{td}</ResCalendarDayCrossed>
                     } else if (Number(this.props.currentCal.month) === Number(this.state.today.slice(4, 6))) {
                       if (td < Number(this.state.today.slice(6, 8))){
-                        return <td className={"res-calendar-day-crossed"}>{td}</td>
+                        return <ResCalendarDayCrossed>{td}</ResCalendarDayCrossed>
                       }
                     }
                   }
@@ -100,19 +127,19 @@ class Calendar extends React.Component {
                     var bookMonth = this.props.booking[i].date.slice(5, 7);
                     var bookDate = Number(this.props.booking[i].date.slice(8, 10));
                     if (bookYear === this.props.currentCal.year && bookMonth === this.props.currentCal.month && td === bookDate) {
-                      return <td className={"res-calendar-day-crossed"}>{td}</td>
+                      return <ResCalendarDayCrossed>{td}</ResCalendarDayCrossed>
                     } else {
                       if (i === this.props.booking.length - 1) {
-                        return <td onClick={this.onClick.bind(this)} onMouseEnter={this.enter} onMouseLeave={this.leave} className={"res-calendar-day"}>{td}</td>
+                        return <ResCalendarDay onClick={this.onClick.bind(this)} onMouseEnter={this.enter} onMouseLeave={this.leave}>{td}</ResCalendarDay>
                       }
                     }
                   }
                 }
               })}
-            </tr>
+            </ResCalendarWeek>
           })}
         </tbody>
-      </table>
+      </ResCalendar>
     )
   }
 }
