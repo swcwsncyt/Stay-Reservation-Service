@@ -61,7 +61,7 @@ class App extends React.Component {
     window.addEventListener('scroll', this.onScroll.bind(this));
   }
   getInitialData() {
-    axios.post('/api/reservation/search', {id: 1})
+    axios.post('/api/reservation/search', {id: 50})
     .then((res) => {
       this.setState({
         listing: res.data.listing[0],

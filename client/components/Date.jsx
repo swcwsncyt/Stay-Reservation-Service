@@ -34,7 +34,7 @@ const ResDateOverlayContainer = styled.div`
 const ResDateOverlayPointer = styled.img`
   height: 15px;
 `
-const ResDateOverlayBtn = styled.div`
+const ResDateOverlayBtn = styled.button`
   width: 36px;
   height: 30px;
   margin-top: 15px;
