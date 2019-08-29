@@ -1,16 +1,27 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const ResPriceDetails = styled.div`
+  width: 326px;
+  height: 28px;
+  margin-top: 16px;
+`
+const ResReviewDetails = styled.div`
+  width: 326px;
+  height: 20px;
+`
 
 var RoomDetails = (props) => {
   return (
     <div>
-      <div id="res-price-details">
-        <span style={{fontSize: `22px`, fontWeight: `800`}}>$36</span>
+      <ResPriceDetails>
+        <span style={{fontSize: `22px`, fontWeight: `800`}}>${props.details?props.details.price:null}</span>
         <span style={{fontSize: `12px`, fontWeight: `600`}}> per night</span>
-      </div>
-      <div id="res-review-details">
+      </ResPriceDetails>
+      <ResReviewDetails>
         <span style={{fontSize: `9px`, color: `rgb(0, 132, 137)`}}>★★★★★</span>
-        <span style={{fontSize: `12px`, fontWeight: `600`}}> 5039</span>
-      </div>
+        <span style={{fontSize: `12px`, fontWeight: `600`}}> {props.details?props.details.reviews:null}</span>
+      </ResReviewDetails>
     </div>
   )
 }
