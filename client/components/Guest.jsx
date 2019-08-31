@@ -61,6 +61,9 @@ const ResGuestOverlayClose = styled.div`
   font-weight: 600;
   text-align: right;
   cursor: pointer;
+  :hover {
+    text-decoration: underline;
+  }
 `
 const ResGuestOverlayBtnGroup = styled.div`
   float: right;
@@ -96,7 +99,6 @@ const ResGuestArrow = styled.img`
   padding-right: 16px;
   float: right;
 `
-
 
 class Guest extends React.Component {
   constructor(props) {
@@ -223,6 +225,11 @@ class Guest extends React.Component {
       })
     }
   }
+  onClickClose() {
+    this.setState({
+      overlay: false
+    })
+  }
   render() { //refractor consideration: separate the btn group from guest to an individul componenet
     return (
       <ResGuestBox>
@@ -261,7 +268,7 @@ class Guest extends React.Component {
               <div style={{fontSize: `14px`, fontWeight: `400`, width: `55px`, marginTop: `5px`}}>Under 2</div>
             </ResGuestOverlayInfants>
             <ResGuestOverlayInfo>4 guests maximum. Infants don’t count toward the number of guests.</ResGuestOverlayInfo>
-            <ResGuestOverlayClose>Close</ResGuestOverlayClose>
+            <ResGuestOverlayClose onClick={this.onClickClose.bind(this)}>Close</ResGuestOverlayClose>
           </ResGuestOverlayInner>
         </ResGuestOverlay>
         : null}

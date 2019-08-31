@@ -20,23 +20,23 @@ var Total = (props) => {
   return (
     <ResTotalBox>
       <div>
-        <span>${props.details?props.details.price:null} x 1 night</span>
-        <span style={{float: "right"}}>${props.details?props.details.price*1:null}</span>
+        <span>${props.details.price} x {props.diff} {props.diff === 1?`night`:`nights`}</span>
+        <span style={{float: "right"}}>${(props.details.price*props.diff).toFixed(2)}</span>
       </div>
       <ResThinLine />
       <div>
         <span>Cleaning fee</span>
-        <span style={{float: "right"}}>${props.details?props.details.cleanFee:null}</span>
+        <span style={{float: "right"}}>${props.details.cleanFee}</span>
       </div>
       <ResThinLine />
       <div>
         <span>Service fee</span>
-        <span style={{float: "right"}}>${props.details?props.details.serviceFee:null}</span>
+        <span style={{float: "right"}}>${props.details.serviceFee}</span>
       </div>
       <ResThinLine />
       <div>
         <span>Total</span>
-        <span style={{float: "right"}}>${props.details?props.details.price*1 + props.details.cleanFee + props.details.serviceFee:null}</span>
+        <span style={{float: "right"}}>${(props.details.price * props.diff + props.details.cleanFee + props.details.serviceFee).toFixed(2)}</span>
       </div>
     </ResTotalBox>
   )

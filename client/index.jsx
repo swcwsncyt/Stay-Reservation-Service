@@ -7,6 +7,7 @@ import Date from './components/Date.jsx';
 import Guest from './components/Guest.jsx';
 import Total from './components/Total.jsx';
 import Reserve from './components/ReserveBtn.jsx';
+import moment from 'moment';
 
 const ResModule = styled.div`
   color: rgb(72, 72, 72);
@@ -50,9 +51,10 @@ class App extends React.Component {
         float: 'right',
         marginRight: '150px',
         marginTop: '52px',
-        listing: {},
-        booking: [],
       },
+      listing: {},
+      booking: [],
+      diff: 1
     };
     this.initialData = this.getInitialData.bind(this);
   }
@@ -71,10 +73,17 @@ class App extends React.Component {
         });
       })
       .catch((err) => {
-        console.log('err');
+        console.log(err);
       });
   }
-
+  getSelectedDate(start, end) {
+    //calculate the diff
+    var diff = moment(end, "MM-DD-YYYY").diff(moment(start, "MM-DD-YYYY"), "days")
+    console.log(diff);
+    this.setState({
+      diff: diff
+    })
+  }
   onScroll(e) {
     if (e.target.scrollingElement.scrollTop > 527 && e.target.scrollingElement.scrollTop < 1688) {
       this.setState({
@@ -117,9 +126,9 @@ class App extends React.Component {
           <RoomDetails details={this.state.listing} />
           <ResLine />
           <ResForm onSubmit={this.onSubmit.bind(this)}>
-            <Date booking={this.state.booking} />
+            <Date getDuration={this.getSelectedDate.bind(this)} booking={this.state.booking} />
             <Guest details={this.state.listing} />
-            <Total details={this.state.listing} />
+            <Total diff={this.state.diff} details={this.state.listing} />
             <Reserve />
             <ResChargeStatement>You won’t be charged yet</ResChargeStatement>
           </ResForm>
@@ -130,5 +139,5 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, document.getElementById('res'));
-// style={this.state.resStyle}
+
 export default App;

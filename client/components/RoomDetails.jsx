@@ -21,7 +21,6 @@ const ResReviewDetails = styled.div`
 `
 
 var RoomDetails = (props) => {
-  console.log(props)
   var star, starImg;
   props.details ? star = props.details.star : null;
   star === 1 ? starImg = oneStar : null;

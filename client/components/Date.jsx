@@ -60,6 +60,9 @@ const ResDateOverlayClear = styled.div`
   font-weight: 600;
   text-align: right;
   cursor: pointer;
+  :hover {
+    text-decoration: underline;
+  }
 `
 class Date extends React.Component {
   constructor(props) {
@@ -74,10 +77,12 @@ class Date extends React.Component {
       pointerStyle: {},
       currentMonth: moment().format("MM"),
       currentYear: moment().format("YYYY"),
-      calendar: {month: moment().format("MM"), year: moment().format("YYYY")}
+      calendar: {month: moment().format("MM"), year: moment().format("YYYY")},
+      calendarState: {},
+      clear: false
     }
   }
-  onClickStart(e) {
+  onClickStart() {
     this.setState({
       overlay: true,
       pointerStyle: {},
@@ -85,7 +90,7 @@ class Date extends React.Component {
       endOverlay: false,
     })
   }
-  onClickEnd(e) {
+  onClickEnd() {
     this.setState({
       overlay: true,
       pointerStyle: {marginLeft: "200px"},
@@ -134,9 +139,45 @@ class Date extends React.Component {
       })
     }
   }
-  getClickedDate(date) {
+  getClickedDate(state) {
+    if (state.startDate !== null && state.endDate === null) {
+      this.setState({
+        start: `${state.startDate.slice(4,6)}/${state.startDate.slice(6,8)}/${state.startDate.slice(0,4)}`,
+        startOverlay: false,
+        endOverlay: true,
+        pointerStyle: {marginLeft: "200px"},
+        calendarState: state,
+        end: "Checkout"
+      })
+    } else {
+      this.setState({
+        end: `${state.endDate.slice(4,6)}/${state.endDate.slice(6,8)}/${state.endDate.slice(0,4)}`,
+        endOverlay: false,
+        overlay: false,
+        calendarState: state
+      }, () => {
+        this.props.getDuration(this.state.start, this.state.end);
+      })
+    }
+  }
+  clearDates() {
     this.setState({
-      start: date
+      overlay: true,
+      startOverlay: true,
+      endOverlay: false,
+      start: "Check-in",
+      end: "Checkout",
+      pointerStyle: {},
+      currentMonth: moment().format("MM"),
+      currentYear: moment().format("YYYY"),
+      calendar: {month: moment().format("MM"), year: moment().format("YYYY")},
+      calendarState: {},
+      clear: true
+    })
+  }
+  resetClear() {
+    this.setState({
+      clear: false
     })
   }
   render() {
@@ -176,8 +217,8 @@ class Date extends React.Component {
                 </tr>
               </thead>
             </ResDateOverlayCalendar>
-            <Calendar getClickedDate={this.getClickedDate.bind(this)} currentCal={this.state.calendar} booking={this.props.booking}/>
-            <ResDateOverlayClear style={{marginRight: "16px", marginTop: "16px", marginBottom: "16px"}}>Clear Dates</ResDateOverlayClear>
+            <Calendar reset={this.resetClear.bind(this)} clear={this.state.clear} getClickedDate={this.getClickedDate.bind(this)} currentCal={this.state.calendar} booking={this.props.booking} state={this.state.calendarState}/>
+            <ResDateOverlayClear onClick={this.clearDates.bind(this)} style={{marginRight: "16px", marginTop: "16px", marginBottom: "16px"}}>Clear Dates</ResDateOverlayClear>
           </ResDateOverlayContainer>
         </div>
         : null}
