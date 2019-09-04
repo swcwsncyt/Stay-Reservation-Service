@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import RoomDetails from './components/RoomDetails.jsx';
@@ -65,7 +64,7 @@ class Reservation extends React.Component {
   }
 
   getInitialData() {
-    axios.get('http://localhost:1314/api/reservation/search?id=50')
+    axios.get('/api/reservation/search?id=50')
       .then((res) => {
         this.setState({
           listing: res.data.listing[0],

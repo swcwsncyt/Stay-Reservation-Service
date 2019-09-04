@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
-const port = '1314';
+const port = '5001';
 const db = require('./database/index.js');
 
 app.use(bodyParser.json());
@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public/dist')));
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5678");
+  res.header("Access-Control-Allow-Origin", "http://localhost:1314");
   next();
 });
 
