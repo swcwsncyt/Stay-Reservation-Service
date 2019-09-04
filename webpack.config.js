@@ -7,7 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, 'public/dist'),
     publicPath: "http://localhost:1314/",
     filename: 'bundle.js',
-    library: 'lib'
+    library: 'reservation'
   },
   module: {
     rules: [
