@@ -42,7 +42,7 @@ const ResChargeStatement = styled.div`
   font-weight: 600;
 `;
 
-class App extends React.Component {
+class Reservation extends React.Component {
   constructor(props) {
     super(props);
 
@@ -65,7 +65,7 @@ class App extends React.Component {
   }
 
   getInitialData() {
-    axios.post('/api/reservation/search', { id: 50 })
+    axios.get('http://localhost:1314/api/reservation/search?id=50')
       .then((res) => {
         this.setState({
           listing: res.data.listing[0],
@@ -79,7 +79,6 @@ class App extends React.Component {
   getSelectedDate(start, end) {
     //calculate the diff
     var diff = moment(end, "MM-DD-YYYY").diff(moment(start, "MM-DD-YYYY"), "days")
-    console.log(diff);
     this.setState({
       diff: diff
     })
@@ -138,6 +137,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('res'));
-
-export default App;
+export default Reservation;
