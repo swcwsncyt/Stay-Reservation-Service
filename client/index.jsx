@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
-import styled from 'styled-components';
 import RoomDetails from './components/RoomDetails.jsx';
 import Date from './components/Date.jsx';
 import Guest from './components/Guest.jsx';
@@ -42,7 +40,7 @@ const ResChargeStatement = styled.div`
   font-weight: 600;
 `;
 
-class App extends React.Component {
+class Reservation extends React.Component {
   constructor(props) {
     super(props);
 
@@ -65,7 +63,7 @@ class App extends React.Component {
   }
 
   getInitialData() {
-    axios.post('/api/reservation/search', { id: 50 })
+    axios.get('http://localhost:5001/api/reservation/search?id=50')
       .then((res) => {
         this.setState({
           listing: res.data.listing[0],
@@ -79,13 +77,12 @@ class App extends React.Component {
   getSelectedDate(start, end) {
     //calculate the diff
     var diff = moment(end, "MM-DD-YYYY").diff(moment(start, "MM-DD-YYYY"), "days")
-    console.log(diff);
     this.setState({
       diff: diff
     })
   }
   onScroll(e) {
-    if (e.target.scrollingElement.scrollTop > 527 && e.target.scrollingElement.scrollTop < 1688) {
+    if (e.target.scrollingElement.scrollTop > 420 && e.target.scrollingElement.scrollTop < 1688) {
       this.setState({
         resStyle: {
           right: '158px',
@@ -95,7 +92,7 @@ class App extends React.Component {
         },
       });
     }
-    if (e.target.scrollingElement.scrollTop < 527) {
+    if (e.target.scrollingElement.scrollTop < 420) {
       this.setState({
         resStyle: {
           float: 'right',
@@ -138,6 +135,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('res'));
-
-export default App;
+export default Reservation;

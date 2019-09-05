@@ -3,7 +3,6 @@ import arrow from '../img/arrow.png';
 import Calendar from './Calendar.jsx';
 import pointer from '../img/pointer.png';
 import moment from 'moment';
-import styled from 'styled-components';
 
 const ResDateSelectBox = styled.div`
   width: 326px;

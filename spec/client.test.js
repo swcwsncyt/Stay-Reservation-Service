@@ -1,7 +1,7 @@
 import { shallow, mount, render } from 'enzyme';
 import React from 'react';
 import { sum } from './sum.js';
-import App from '../client/index.jsx';
+import Reservation from '../client/index.jsx';
 import Guest from '../client/components/Guest.jsx';
 import Total from '../client/components/Total.jsx';
 import RoomDetails from '../client/components/RoomDetails.jsx';
@@ -18,16 +18,16 @@ describe('test the test', () => {
   });
 });
 
-describe('unit test for <App />', () => {
+describe('unit test for <Reservation />', () => {
   test('renders without crashing', () => {
-    shallow(<App />);
+    shallow(<Reservation />);
   });
   test('should has a onSubmit handler', () => {
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<Reservation />);
     expect(wrapper.instance().onSubmit()).toBe(undefined);
   });
   test('should has a onScroll handler', () => {
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<Reservation />);
     expect(wrapper.instance().onScroll()).toBe(undefined);
   });
 });

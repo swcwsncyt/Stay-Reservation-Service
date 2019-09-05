@@ -1,7 +1,6 @@
 import React from 'react';
 import downarrow from '../img/downarrow.png';
 import uparrow from '../img/uparrow.png';
-import styled from 'styled-components';
 
 const ResGuestBox = styled.div`
   width: 326px;

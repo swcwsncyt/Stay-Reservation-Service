@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import oneStar from '../img/onestar.png';
 import onehStar from '../img/onehstar.png';
 import twoStar from '../img/twostar.png';
