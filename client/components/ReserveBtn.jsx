@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 const ResReserveBtn = styled.button`
   width: 326px;

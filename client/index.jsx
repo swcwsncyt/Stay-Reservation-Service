@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
 import RoomDetails from './components/RoomDetails.jsx';
 import Date from './components/Date.jsx';
 import Guest from './components/Guest.jsx';
@@ -64,7 +63,7 @@ class Reservation extends React.Component {
   }
 
   getInitialData() {
-    axios.get('/api/reservation/search?id=50')
+    axios.get('http://localhost:5001/api/reservation/search?id=50')
       .then((res) => {
         this.setState({
           listing: res.data.listing[0],
@@ -83,7 +82,7 @@ class Reservation extends React.Component {
     })
   }
   onScroll(e) {
-    if (e.target.scrollingElement.scrollTop > 527 && e.target.scrollingElement.scrollTop < 1688) {
+    if (e.target.scrollingElement.scrollTop > 420 && e.target.scrollingElement.scrollTop < 1688) {
       this.setState({
         resStyle: {
           right: '158px',
@@ -93,7 +92,7 @@ class Reservation extends React.Component {
         },
       });
     }
-    if (e.target.scrollingElement.scrollTop < 527) {
+    if (e.target.scrollingElement.scrollTop < 420) {
       this.setState({
         resStyle: {
           float: 'right',

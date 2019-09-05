@@ -5,7 +5,6 @@ module.exports = {
   entry: path.resolve(__dirname, 'client/index.jsx'),
   output: {
     path: path.resolve(__dirname, 'public/dist'),
-    publicPath: "http://localhost:1314/",
     filename: 'bundle.js',
     library: 'reservation'
   },
