@@ -1,7 +1,5 @@
 import React from 'react';
-import arrow from '../img/arrow.png';
 import Calendar from './Calendar.jsx';
-import pointer from '../img/pointer.png';
 import moment from 'moment';
 
 const ResDateSelectBox = styled.div`
@@ -188,7 +186,7 @@ class Date extends React.Component {
             <span style={this.state.startOverlay?{backgroundColor: `#99ede6`, borderRadius: "3px"}: null}>{this.state.start}</span>
           </ResDateInput>
           <div onClick={this.hideAll.bind(this)} style={{float: "left"}}>
-            <img style={{height: "38px"}} src={arrow}/>
+            <img style={{height: "38px"}} src={"https://fec-reservation.s3-us-west-1.amazonaws.com/arrow.png"}/>
           </div>
           <ResDateInput onClick={this.onClickEnd.bind(this)}>
             <span style={this.state.endOverlay?{backgroundColor: `#99ede6`, borderRadius: "3px"}: null}>{this.state.end}</span>
@@ -197,7 +195,7 @@ class Date extends React.Component {
         {this.state.overlay? 
         <div style={{height: "343px"}}>
           <div style={{height: "8px"}}>
-            <ResDateOverlayPointer src={pointer} style={this.state.pointerStyle}/>
+            <ResDateOverlayPointer src={"https://fec-reservation.s3-us-west-1.amazonaws.com/pointer.png"} style={this.state.pointerStyle}/>
           </div>
           <ResDateOverlayContainer>
             <ResDateOverlayBtn onClick={this.onClickPrev.bind(this)} style={{float: "left", marginLeft: "15px"}}>←</ResDateOverlayBtn>
