@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public/dist')));
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5678");
+  res.header("Access-Control-Allow-Origin", "http://ec2-18-144-53-154.us-west-1.compute.amazonaws.com:5678");
   next();
 });
 

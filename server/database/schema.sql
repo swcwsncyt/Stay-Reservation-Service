@@ -16,6 +16,7 @@ CREATE TABLE listing (
 CREATE TABLE booking (
   listing_id INT NOT NULL,
   date DATE NOT NULL
-)
+);
+
 
 -- SELECT effectiveDate <= tdy ORDER BY effectiveDate desc LIMIT 1;

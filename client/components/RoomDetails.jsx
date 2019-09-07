@@ -1,13 +1,4 @@
 import React from 'react';
-import oneStar from '../img/onestar.png';
-import onehStar from '../img/onehstar.png';
-import twoStar from '../img/twostar.png';
-import twohStar from '../img/twohstar.png';
-import threeStar from '../img/threestar.png';
-import threehStar from '../img/threehstar.png';
-import fourStar from '../img/fourstar.png';
-import fourhStar from '../img/fourhstar.png';
-import fiveStar from '../img/fivestar.png';
 
 const ResPriceDetails = styled.div`
   width: 326px;
@@ -22,15 +13,15 @@ const ResReviewDetails = styled.div`
 var RoomDetails = (props) => {
   var star, starImg;
   props.details ? star = props.details.star : null;
-  star === 1 ? starImg = oneStar : null;
-  star === 1.5 ? starImg = onehStar : null;
-  star === 2 ? starImg = twoStar : null;
-  star === 2.5 ? starImg = twohStar : null;
-  star === 3 ? starImg = threeStar : null;
-  star === 3.5 ? starImg = threehStar : null;
-  star === 4 ? starImg = fourStar : null;
-  star === 4.5 ? starImg = fourhStar : null;
-  star === 5 ? starImg = fiveStar : null;
+  star === 1 ? starImg = "https://fec-reservation.s3-us-west-1.amazonaws.com/onestar.png" : null;
+  star === 1.5 ? starImg = "https://fec-reservation.s3-us-west-1.amazonaws.com/onehstar.png" : null;
+  star === 2 ? starImg = "https://fec-reservation.s3-us-west-1.amazonaws.com/twostar.png" : null;
+  star === 2.5 ? starImg = "https://fec-reservation.s3-us-west-1.amazonaws.com/twohstar.png" : null;
+  star === 3 ? starImg = "https://fec-reservation.s3-us-west-1.amazonaws.com/threestar.png" : null;
+  star === 3.5 ? starImg = "https://fec-reservation.s3-us-west-1.amazonaws.com/threehstar.png" : null;
+  star === 4 ? starImg = "https://fec-reservation.s3-us-west-1.amazonaws.com/fourstar.png" : null;
+  star === 4.5 ? starImg = "https://fec-reservation.s3-us-west-1.amazonaws.com/fourhstar.png" : null;
+  star === 5 ? starImg = "https://fec-reservation.s3-us-west-1.amazonaws.com/fivestar.png" : null;
   return (
     <div>
       <ResPriceDetails>

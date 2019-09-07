@@ -63,7 +63,7 @@ class Reservation extends React.Component {
   }
 
   getInitialData() {
-    axios.get('http://localhost:5001/api/reservation/search?id=50')
+    axios.get('http://ec2-18-144-53-154.us-west-1.compute.amazonaws.com:5001/api/reservation/search?id=50')
       .then((res) => {
         this.setState({
           listing: res.data.listing[0],
@@ -82,7 +82,7 @@ class Reservation extends React.Component {
     })
   }
   onScroll(e) {
-    if (e.target.scrollingElement.scrollTop > 420 && e.target.scrollingElement.scrollTop < 1688) {
+    if (e.target.scrollingElement.scrollTop > 527 && e.target.scrollingElement.scrollTop < 2200) {
       this.setState({
         resStyle: {
           right: '158px',
@@ -92,7 +92,7 @@ class Reservation extends React.Component {
         },
       });
     }
-    if (e.target.scrollingElement.scrollTop < 420) {
+    if (e.target.scrollingElement.scrollTop < 527) {
       this.setState({
         resStyle: {
           float: 'right',
@@ -101,12 +101,12 @@ class Reservation extends React.Component {
         },
       });
     }
-    if (e.target.scrollingElement.scrollTop > 1688) {
+    if (e.target.scrollingElement.scrollTop > 2200) {
       this.setState({
         resStyle: {
           float: 'right',
           marginRight: '150px',
-          marginTop: '1220px',
+          marginTop: '1750px',
         },
       });
     }

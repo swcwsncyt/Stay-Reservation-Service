@@ -1,6 +1,4 @@
 import React from 'react';
-import downarrow from '../img/downarrow.png';
-import uparrow from '../img/uparrow.png';
 
 const ResGuestBox = styled.div`
   width: 326px;
@@ -106,7 +104,7 @@ class Guest extends React.Component {
     this.state = {
       guest: 1,
       overlay: false,
-      arrow: downarrow,
+      arrow: "https://fec-reservation.s3-us-west-1.amazonaws.com/downarrow.png",
       adults: 1,
       children: 0,
       infants: 0,
@@ -215,12 +213,12 @@ class Guest extends React.Component {
     if (!this.state.overlay) {
       this.setState({
         overlay: !this.state.overlay,
-        arrow: uparrow
+        arrow: "https://fec-reservation.s3-us-west-1.amazonaws.com/uparrow.png"
       })
     } else {
       this.setState({
         overlay: !this.state.overlay,
-        arrow: downarrow
+        arrow: "https://fec-reservation.s3-us-west-1.amazonaws.com/downarrow.png"
       })
     }
   }
