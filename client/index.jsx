@@ -63,7 +63,8 @@ class Reservation extends React.Component {
   }
 
   getInitialData() {
-    axios.get('http://ec2-18-144-53-154.us-west-1.compute.amazonaws.com:5001/api/reservation/search?id=50')
+    var id = document.URL.slice(63, document.URL.length)
+    axios.get(`http://ec2-18-144-53-154.us-west-1.compute.amazonaws.com:5001/api/reservation/search/${id}`)
       .then((res) => {
         this.setState({
           listing: res.data.listing[0],
