@@ -10,22 +10,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public/dist')));
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://ec2-18-144-53-154.us-west-1.compute.amazonaws.com:5678");
+  res.header("Access-Control-Allow-Origin", "*");
   next();
 });
 
-app.get('/api/reservation/search', (req, res) => {
-  db.getListingById(req.query.id, (err, result) => {
+app.get('/api/reservation/search/:id', (req, res) => {
+  db.getListingById(req.params.id, (err, result) => {
     if (err) console.log(err);
-    db.getBookingById(req.query.id, (errB, resultB) => {
+    db.getBookingById(req.params.id, (errB, resultB) => {
       if (errB) console.log(errB);
       res.send({ listing: result, booking: resultB });
     });
   });
-});
-
-app.get('/', (req, res) => {
-  res.send("hello");
 });
 
 app.listen(port, () => {
