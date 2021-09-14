@@ -1,6 +1,6 @@
 # Stay-Reservation
 
-> Remake the Airbnb WebApp - Reservation Part
+![](stay.gif)
 
 ## Related Projects
 
